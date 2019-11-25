@@ -1,0 +1,120 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled7.ipynb",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/polivio/constructed-datasets/blob/master/Test_CIFAR_Dataset\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "dmCu4exkW_bi",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import torch as ch\n",
+        "from torchvision import transforms\n",
+        "\n"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ofJwyzyLX8UP",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 340
+        },
+        "outputId": "c226916f-7648-4b43-9a3a-6489c26a3410"
+      },
+      "source": [
+        "!wget https://andrewilyas.com/datasets.tar\n"
+      ],
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "--2019-11-25 17:01:31--  https://andrewilyas.com/datasets.tar\n",
+            "Resolving andrewilyas.com (andrewilyas.com)... 52.218.245.3\n",
+            "Connecting to andrewilyas.com (andrewilyas.com)|52.218.245.3|:443... failed: Connection timed out.\n",
+            "Retrying.\n",
+            "\n",
+            "--2019-11-25 17:03:41--  (try: 2)  https://andrewilyas.com/datasets.tar\n",
+            "Connecting to andrewilyas.com (andrewilyas.com)|52.218.245.3|:443... failed: Connection timed out.\n",
+            "Retrying.\n",
+            "\n",
+            "--2019-11-25 17:05:53--  (try: 3)  https://andrewilyas.com/datasets.tar\n",
+            "Connecting to andrewilyas.com (andrewilyas.com)|52.218.245.3|:443... failed: Connection timed out.\n",
+            "Retrying.\n",
+            "\n",
+            "--2019-11-25 17:08:05--  (try: 4)  https://andrewilyas.com/datasets.tar\n",
+            "Connecting to andrewilyas.com (andrewilyas.com)|52.218.245.3|:443... failed: Connection timed out.\n",
+            "Retrying.\n",
+            "\n",
+            "--2019-11-25 17:10:21--  (try: 5)  https://andrewilyas.com/datasets.tar\n",
+            "Connecting to andrewilyas.com (andrewilyas.com)|52.218.245.3|:443... ^C\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "oaNkc_P3ZY2L",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 232
+        },
+        "outputId": "2736692f-8b4a-4843-947a-185f09f202c4"
+      },
+      "source": [
+        "train_transform = transforms.Compose([...])\n",
+        "\n",
+        "data_path = \"robust_CIFAR\"\n",
+        "\n",
+        "train_data = ch.cat(ch.load(os.path.join(data_path, f\"CIFAR_ims\")))\n",
+        "train_labels = ch.cat(ch.load(os.path.join(data_path, f\"CIFAR_lab\")))\n",
+        "train_set = folder.TensorDataset(train_data, train_labels, transform=train_transform) "
+      ],
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-4-00ebee6416b6>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0mdata_path\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m\"robust_CIFAR\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 5\u001b[0;31m \u001b[0mtrain_data\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mch\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcat\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mch\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mload\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mos\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mpath\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mjoin\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mdata_path\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34mf\"CIFAR_ims\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      6\u001b[0m \u001b[0mtrain_labels\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mch\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcat\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mch\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mload\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mos\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mpath\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mjoin\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mdata_path\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34mf\"CIFAR_lab\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      7\u001b[0m \u001b[0mtrain_set\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mfolder\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mTensorDataset\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mtrain_data\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtrain_labels\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtransform\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mtrain_transform\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mNameError\u001b[0m: name 'os' is not defined"
+          ]
+        }
+      ]
+    }
+  ]
+}
